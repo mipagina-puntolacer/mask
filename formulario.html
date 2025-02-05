@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header con Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        /* Eliminar las flechas del input tipo número */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-gradient-to-r from-blue-500 to-blue-800 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <img src="logo.png" alt="Logo" class="h-10">
+            <nav class="relative">
+                <button class="text-white focus:outline-none" id="menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <ul class="absolute bg-black text-black mt-2 py-2 w-48 rounded shadow-lg hidden" id="menu">
+                    <li><a href="index.html" class="block px-4 py-2 hover:bg-gray-200">Inicio</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Acerca</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Servicios</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="bg-gradient-to-r from-blue-400 to-blue-700 py-20 text-white text-center">
+        <h2 class="text-3xl font-bold">Bienvenido a nuestra página</h2>
+        <p class="mt-4 text-lg">Explora nuestros servicios y descubre más sobre nosotros.</p>
+    </section>
+    <section class="bg-gray-100 py-10 px-6">
+        <div class="max-w-lg mx-auto bg-white p-6 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-center">Formulario de Compra</h2>
+            <form>
+                <label class="block mb-2">Nombre:</label>
+                <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Ingrese su nombre">
+                
+                <label class="block mb-2">Apellido:</label>
+                <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Ingrese su apellido">
+                
+                <label class="block mb-2">Número de WhatsApp:</label>
+                <div class="flex items-center mb-4">
+                    <select class="w-20 p-2 border rounded-l bg-gray-100">
+                        <option value="+1" data-flag="us">+1</option>
+                        <option value="+44" data-flag="gb">+44</option>
+                        <option value="+34" data-flag="es">+58</option>
+                        <option value="+55" data-flag="br">+55</option>
+                        <option value="+91" data-flag="in">+91</option>
+                        <option value="+49" data-flag="de">+49</option>
+                        <option value="+33" data-flag="fr">+33</option>
+                        <option value="+61" data-flag="au">+61</option>
+                        <option value="+81" data-flag="jp">+81</option>
+                        <option value="+86" data-flag="cn">+86</option>
+                        <option value="+27" data-flag="za">+27</option>
+                        <option value="+39" data-flag="it">+39</option>
+                        <option value="+55" data-flag="br">+55</option>
+                        <option value="+52" data-flag="mx">+52</option>
+                        <option value="+7" data-flag="ru">+7</option>
+                        <option value="+34" data-flag="es">+34</option>
+                        <!-- Aquí puedes seguir agregando más países -->
+                    </select>
+                    <input type="number" class="w-full p-2 border rounded-r" placeholder="Ingrese su número">
+                </div>
+                
+                <div class="mt-4">
+                    <div class="border p-4 w-full h-64 flex items-center justify-center bg-gray-200" id="product-image-container">
+                        <video autoplay src="untitled.mp4" alt="Vista previa del producto" class="object-contain w-full h-full">
+                    </div>
+                </div>
+
+                <!-- Contenedor para el input de cantidad -->
+                <div class="mt-4 flex items-center justify-between">
+                    <label class="text-lg font-semibold">Cantidad:</label>
+                    <div class="flex items-center">
+                        <button type="button" id="decrease" class="bg-gray-300 text-xl px-4 py-2 rounded-l hover:bg-gray-400">-</button>
+                        <input type="number" id="quantity" value="1" min="1" class="w-20 text-center border rounded-tl rounded-br p-2 mx-2" readonly>
+                        <button type="button" id="increase" class="bg-gray-300 text-xl px-4 py-2 rounded-r hover:bg-gray-400">+</button>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-lg font-semibold">Costo del Producto:</span>
+                    <span class="text-lg">$5.00</span>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-lg font-semibold">Total:</span>
+                    <span class="text-lg" id="total-cost">$5.00</span>
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 mt-4 rounded hover:bg-blue-700">Comprar</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+
+        // Funcionalidad de botones de cantidad
+        const decreaseButton = document.getElementById('decrease');
+        const increaseButton = document.getElementById('increase');
+        const quantityInput = document.getElementById('quantity');
+        const totalCost = document.getElementById('total-cost');
+        const pricePerItem = 5.00;
+
+        decreaseButton.addEventListener('click', function() {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantity--;
+                quantityInput.value = quantity;
+                totalCost.textContent = `$${(quantity * pricePerItem).toFixed(2)}`;
+            }
+        });
+
+        increaseButton.addEventListener('click', function() {
+            let quantity = parseInt(quantityInput.value);
+            quantity++;
+            quantityInput.value = quantity;
+            totalCost.textContent = `$${(quantity * pricePerItem).toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

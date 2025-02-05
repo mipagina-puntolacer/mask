@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORTUNA</title>
+    <link rel="icon" type="Image/jpg" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #008cff, #1101ff);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(30, 32, 30, 0.705);
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 40%;
+            max-width: 100px;
+            height: auto;
+        }
+        
+        .container {
+            margin-top: 120px;
+            padding: 0 10px;
+        }
+        
+        video {
+            margin-top: 6px;
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            border: 5px solid #1140db;
+            border-radius: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .button {
+            display: block;
+            margin: 15px auto 0;
+            padding: 10px 20px;
+            font-size: 25px;
+            background: linear-gradient(to right, #66bb6a, #388e3c);
+            color: rgb(253, 253, 253);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            width: 80%;
+            max-width: 200px;
+        }
+        
+        .button:hover {
+            background: linear-gradient(to right, #81c784, #2e7d32);
+        }
+        
+        .description {
+            margin-top: 15px;
+            font-size: 16px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            color: rgb(248, 245, 245);
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            animation: blink 1.5s infinite;
+        }
+
+        .whatsapp-button img {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .whatsapp-button:hover {
+            background: #1ebe5d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <video controls>
+            <source src="untitled.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+        <a href="formulario.html" class="button">Unirme Al Grupo</a>
+        <p class="description">
+            SE REALIZARAN DOS DINAMICAS AL DIA <br>
+            1) HORARIOS <br>
+            1️⃣ 8AM A 1PM <br>
+            2️⃣ 4PM A 7PM <br><br>
+            2) LA PRIMERA DINAMICA CONSTA DE 6 ANIMALES VALIDOS PARA LAS LOTERIAS LOTTO ACTIVO, LA GRANJITA Y SELVA PLUS, 
+            LA SEGUNDA SERA DE 4 ANIMALES VALIDOS PARA LAS MISMAS LOTERIAS <br><br>
+            3) EL PRECIO DE AMBAS DINAMICAS SERA DE 30 BS <br><br>
+            4) DINAMICAS CON NUMEROS REPETIDOS SE LE CAMBIARÁ POR EL ANTERIOR O SIGUIENTE SIEMPRE Y CUANDO NO SALGA EN EL PRIMER SORTEO. 
+            COMBINACIONES CON NÚMEROS FUERA DE LOS 38 ANIMALITOS QUEDA NULA.
+        </p>
+    </div>
+    <a href="" class="whatsapp-button">
+        <img src="descarga (4).jpeg" alt="WhatsApp">
+    </a>
+</body>
+</html>
